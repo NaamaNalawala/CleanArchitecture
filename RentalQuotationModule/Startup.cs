@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -5,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
+using RentalQuotationModule.Core.Entities;
 using RentalQuotationModule.Core.Interfaces;
 using RentalQuotationModule.Core.Services;
 using RentalQuotationModule.Infrastructure.Data;
@@ -12,6 +15,7 @@ using RentalQuotationModule.Infrastructure.Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
 
 namespace RentalQuotationModule
@@ -31,9 +35,32 @@ namespace RentalQuotationModule
             services.AddControllersWithViews();
             services.AddDbContext<RentalQuotationContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("default")));
+            services.Configure<JwtSettings>(Configuration.GetSection("JwtSettings"));
             services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
             services.AddScoped<ITodoRepository, ToDoRepository>();
             services.AddScoped<ITodoService, TodoService>();
+            
+            services.AddScoped<IUserService, UserService>();
+
+            
+            var jwtSettings = Configuration.GetSection(nameof(JwtSettings)).Get<JwtSettings>();
+            services.AddScoped<IJwtTokenGenerator>(provider => new JwtTokenGenerator(jwtSettings));
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options =>
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuer = true,
+                        ValidateAudience = true,
+                        ValidateLifetime = true,
+                        ValidateIssuerSigningKey = true,
+                        ValidIssuer = jwtSettings.Issuer,
+                        ValidAudience = jwtSettings.Audience,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSettings.SecretKey))
+                    };
+                });
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +80,7 @@ namespace RentalQuotationModule
             app.UseStaticFiles();
 
             app.UseRouting();
-
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

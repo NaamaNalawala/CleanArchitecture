@@ -1,10 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using RentalQuotationModule.Core.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace RentalQuotationModule.Infrastructure.Data
 {
@@ -16,6 +11,7 @@ namespace RentalQuotationModule.Infrastructure.Data
         }
 
         public DbSet<Todo> ToDoItems { get; set; }
+        public DbSet<User> User { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

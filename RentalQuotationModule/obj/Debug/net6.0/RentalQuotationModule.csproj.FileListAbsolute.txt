@@ -68,3 +68,5 @@ C:\Users\Naama\RentalQuotationModule\RentalQuotationModule\obj\Debug\net6.0\Rent
 C:\Users\Naama\RentalQuotationModule\RentalQuotationModule\obj\Debug\net6.0\ref\RentalQuotationModule.dll
 C:\Users\Naama\RentalQuotationModule\RentalQuotationModule\bin\Debug\net6.0\Humanizer.dll
 C:\Users\Naama\RentalQuotationModule\RentalQuotationModule\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule\bin\Debug\net6.0\Microsoft.IdentityModel.Abstractions.dll
