@@ -1,0 +1,12 @@
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\obj\Debug\net6.0\RentalQuotationModule.Core.csproj.AssemblyReference.cache
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\obj\Debug\net6.0\RentalQuotationModule.Core.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\obj\Debug\net6.0\RentalQuotationModule.Core.AssemblyInfoInputs.cache
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\obj\Debug\net6.0\RentalQuotationModule.Core.AssemblyInfo.cs
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\obj\Debug\net6.0\RentalQuotationModule.Core.csproj.CoreCompileInputs.cache
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\bin\Debug\net6.0\RentalQuotationModule.Core.deps.json
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\bin\Debug\net6.0\RentalQuotationModule.Core.dll
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\bin\Debug\net6.0\RentalQuotationModule.Core.pdb
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\obj\Debug\net6.0\RentalQuotationModule.Core.dll
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\obj\Debug\net6.0\refint\RentalQuotationModule.Core.dll
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\obj\Debug\net6.0\RentalQuotationModule.Core.pdb
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Core\obj\Debug\net6.0\ref\RentalQuotationModule.Core.dll

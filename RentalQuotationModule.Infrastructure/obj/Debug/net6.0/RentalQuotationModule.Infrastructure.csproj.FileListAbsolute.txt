@@ -1,0 +1,17 @@
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\obj\Debug\net6.0\RentalQuotationModule.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\obj\Debug\net6.0\RentalQuotationModule.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\obj\Debug\net6.0\RentalQuotationModule.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\obj\Debug\net6.0\RentalQuotationModule.Infrastructure.AssemblyInfo.cs
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\obj\Debug\net6.0\RentalQuotationModule.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\bin\Debug\net6.0\RentalQuotationModule.Infrastructure.deps.json
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\bin\Debug\net6.0\RentalQuotationModule.Infrastructure.runtimeconfig.json
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\bin\Debug\net6.0\RentalQuotationModule.Infrastructure.dll
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\bin\Debug\net6.0\RentalQuotationModule.Infrastructure.pdb
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\bin\Debug\net6.0\RentalQuotationModule.Core.dll
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\bin\Debug\net6.0\RentalQuotationModule.Core.pdb
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\obj\Debug\net6.0\RentalQuotationModule.Infrastructure.csproj.CopyComplete
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\obj\Debug\net6.0\RentalQuotationModule.Infrastructure.dll
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\obj\Debug\net6.0\refint\RentalQuotationModule.Infrastructure.dll
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\obj\Debug\net6.0\RentalQuotationModule.Infrastructure.pdb
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\obj\Debug\net6.0\RentalQuotationModule.Infrastructure.genruntimeconfig.cache
+C:\Users\Naama\RentalQuotationModule\RentalQuotationModule.Infrastructure\obj\Debug\net6.0\ref\RentalQuotationModule.Infrastructure.dll
