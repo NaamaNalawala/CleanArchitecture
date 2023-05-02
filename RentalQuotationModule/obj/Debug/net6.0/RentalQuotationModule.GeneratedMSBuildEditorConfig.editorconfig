@@ -16,6 +16,22 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Naama\RentalQuotationModule\RentalQuotationModule
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Naama/RentalQuotationModule/RentalQuotationModule/Views/CostDetails/CostComponent.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29zdERldGFpbHNcQ29zdENvbXBvbmVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Naama/RentalQuotationModule/RentalQuotationModule/Views/CostDetails/CostDetailsAddEdit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29zdERldGFpbHNcQ29zdERldGFpbHNBZGRFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Naama/RentalQuotationModule/RentalQuotationModule/Views/CostDetails/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29zdERldGFpbHNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Naama/RentalQuotationModule/RentalQuotationModule/Views/CostDetails/View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29zdERldGFpbHNcVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Naama/RentalQuotationModule/RentalQuotationModule/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
