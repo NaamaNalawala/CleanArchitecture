@@ -36,7 +36,7 @@ namespace RentalQuotationModule.Controllers
                     var token = _tokengenerator.GenerateAccessToken(user);
                     Response.Cookies.Append("jwt", token);
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Quotation");
                 }
                 else
                 {

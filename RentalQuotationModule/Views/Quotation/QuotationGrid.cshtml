@@ -1,0 +1,41 @@
+﻿
+<div id="gridexample">
+    <div id="grid"></div>
+    <script>
+        $(document).ready(function () {
+            // Create a new Kendo UI grid
+            $("#grid").kendoGrid({
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "/Quotation/Get",
+                            dataType: "json",
+                            type: "GET"
+                        }
+                    },
+                    schema: {
+                        data: "data",
+                        total: "total"
+                    },
+                    pageSize: 10,
+                    serverPaging: true,
+                    serverSorting: true
+                },
+                height: 250,
+                sortable: true,
+                pageable: true,
+                columns: [
+                    { field: "quotationNumber", title: "QTN No." },
+                    { field: "company", title: "Company" },
+                    { field: "branch", title: "Branch" },
+                    { field: "issueDate", title: "Quotation Date" },
+                    { field: "expiryDate", title: "Quotation Expiry Date" },
+                    { field: "totalNoOfVehicles", title: "No. of vehicles" },
+                    { field: "totalAmount", title: "Total Amount" },
+                    { field: "isApproved", title: "Approval Status" }
+                ]
+            });
+
+        });
+    </script>
+</div>

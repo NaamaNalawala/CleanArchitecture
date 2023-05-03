@@ -18,7 +18,12 @@ namespace RentalQuotationModule.Core.Services
         public async Task<User> AuthenticateUserAsync(User user)
         {
             var result = await _repository.GetAllAsync();
-            return result.First(x =>x.Email== user.Email && x.Password==user.Password);
+            if (result!=null)
+            {
+                return result.First(x => x.Email == user.Email && x.Password == user.Password);
+            }
+            return null;
+            
         }
     }
 }

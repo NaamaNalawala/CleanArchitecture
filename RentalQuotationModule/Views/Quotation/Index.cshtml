@@ -1,0 +1,14 @@
+﻿
+<div class="row text-center justify-content-center">
+    <button id="createButton" class="btn-btn-primary">Create</button>
+</div>
+<div class="row mt-2">
+    @Html.Partial("QuotationGrid.cshtml")
+</div>
+
+<script>
+    $("#createButton").click(function () {
+        window.location.href = '@Url.Content("Quotation/Create")';
+        }
+    );
+</script>
