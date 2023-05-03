@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RentalQuotationModule.Infrastructure.Data;
 
@@ -11,9 +12,10 @@ using RentalQuotationModule.Infrastructure.Data;
 namespace RentalQuotationModule.Infrastructure.Migrations
 {
     [DbContext(typeof(RentalQuotationContext))]
-    partial class RentalQuotationContextModelSnapshot : ModelSnapshot
+    [Migration("20230503122804_AddQuotationIdToCustomer")]
+    partial class AddQuotationIdToCustomer
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

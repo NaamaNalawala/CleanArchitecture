@@ -45,7 +45,14 @@ namespace RentalQuotationModule
             services.AddScoped<IQuotationService, QuotationService>();
             services.AddScoped<IUserService, UserService>();
 
-            
+            services.AddSession(options =>
+            {
+                options.IdleTimeout = TimeSpan.FromMinutes(30); // Set session timeout
+                options.Cookie.HttpOnly = true;
+                options.Cookie.IsEssential = true;
+            });
+
+
             var jwtSettings = Configuration.GetSection(nameof(JwtSettings)).Get<JwtSettings>();
             services.AddScoped<IJwtTokenGenerator>(provider => new JwtTokenGenerator(jwtSettings));
 
@@ -81,7 +88,7 @@ namespace RentalQuotationModule
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();

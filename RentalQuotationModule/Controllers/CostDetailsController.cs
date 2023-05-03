@@ -1,5 +1,6 @@
 ﻿using Kendo.Mvc.Extensions;
 using Kendo.Mvc.UI;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using RentalQuotationModule.Core.Entities;
@@ -25,14 +26,39 @@ namespace RentalQuotationModule.Controllers
         {
             return View();
         }
+        public IActionResult AddEdit()
+        {
+            return View("CostDetailsAddEdit");
+        }
         [HttpPost]
         public async Task<IActionResult> Create([FromBody] CostDetails costDetails)
         {
             //var costDetails = JsonConvert.DeserializeObject<CostDetails>(jsonData);
-            if (ModelState.IsValid)
+            try
             {
-                await _costDetailService.AddAsync(costDetails);
-                return RedirectToAction(nameof(Index));
+                if (ModelState.IsValid)
+                {
+                    await _costDetailService.AddAsync(costDetails);
+                    var savedDataIds = HttpContext.Session.GetString("CostDetailIds");
+                    if (string.IsNullOrEmpty(savedDataIds))
+                    {
+                        // If this is the first saved data, create a new list with the current Id
+                        savedDataIds = JsonConvert.SerializeObject(new List<int> { costDetails.Id });
+                    }
+                    else
+                    {
+                        // If there are already saved data, deserialize the JSON string to a list and add the current Id
+                        var idsList = JsonConvert.DeserializeObject<List<int>>(savedDataIds);
+                        idsList.Add(costDetails.Id);
+                        savedDataIds = JsonConvert.SerializeObject(idsList);
+                    }
+                    HttpContext.Session.SetString("CostDetailIds", savedDataIds);
+                    return RedirectToAction(nameof(Index));
+                }
+            }
+            catch (System.Exception ex)
+            {
+                throw;
             }
             return View(costDetails);
         }

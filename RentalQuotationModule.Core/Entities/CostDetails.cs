@@ -2,6 +2,7 @@
 {
     public class CostDetails: BaseEntity
     {
+        public int QuotationId { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
         public string Group { get; set; }

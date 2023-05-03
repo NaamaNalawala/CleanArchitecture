@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using RentalQuotationModule.Infrastructure.Data;
 
@@ -11,9 +12,10 @@ using RentalQuotationModule.Infrastructure.Data;
 namespace RentalQuotationModule.Infrastructure.Migrations
 {
     [DbContext(typeof(RentalQuotationContext))]
-    partial class RentalQuotationContextModelSnapshot : ModelSnapshot
+    [Migration("20230503111421_AddedQuotationField")]
+    partial class AddedQuotationField
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -85,9 +87,6 @@ namespace RentalQuotationModule.Infrastructure.Migrations
                     b.Property<int>("NoOfVehicle")
                         .HasColumnType("int");
 
-                    b.Property<int>("QuotationId")
-                        .HasColumnType("int");
-
                     b.Property<string>("Remarks")
                         .HasColumnType("nvarchar(max)");
 
@@ -140,9 +139,6 @@ namespace RentalQuotationModule.Infrastructure.Migrations
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("QuotationId")
-                        .HasColumnType("int");
-
                     b.HasKey("Id");
 
                     b.ToTable("Customer");
@@ -161,6 +157,9 @@ namespace RentalQuotationModule.Infrastructure.Migrations
 
                     b.Property<string>("Company")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CostDetailId")
+                        .HasColumnType("int");
 
                     b.Property<int>("CreatedBy")
                         .HasColumnType("int");

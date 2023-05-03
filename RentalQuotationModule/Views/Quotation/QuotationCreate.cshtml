@@ -13,7 +13,21 @@
                 <form id="rentalSumForm"></form>
             </div>
         </div>
-        
+        <div class="row mt-2">
+            <div class="col-12 bg-light">
+                <div class="font-weight-bold">Cost Details</div>
+                <button id="createCostComponent" class="btn btn-sm btn-primary ml-5">Add New Cost Component</button>
+            </div>
+            
+        </div>
+        <div class="row">
+            <div class="col-12">
+                @Html.Partial("~/Views/CostDetails/CostDetailsGrid.cshtml")
+            </div>
+           
+
+        </div>
+
     </div>
 
     <script>
@@ -34,23 +48,15 @@
                     type: "group",
                     label: "Costing Details",
                     items: [
-                            { field: "IssueDate", label: { text: "Quotation Date", optional: true } },
-                            { field: "ExpiryDate", label: { text: "Quotation Expiry Date", optional: true } },
-                            { field: "RentalStartDate", label: { text: "Rental Start Date", optional: true } },
-                            { field: "RentalEndDate", label: { text: "Rental End Date", optional: true } },
+                            { field: "IssueDate", label: { text: "Quotation Date"} },
+                            { field: "ExpiryDate", label: { text: "Quotation Expiry Date"} },
+                            { field: "RentalStartDate", label: { text: "Rental Start Date"} },
+                            { field: "RentalEndDate", label: { text: "Rental End Date"} },
                             { field: "RentalDuration", label: "Rental Duration"}
                             
                     ]
                     }],
                 validateField: function (e) {
-                    validationSuccess.html("");
-                },
-                submit: function (e) {
-                    SaveQuotationDetails(e.model);
-                    alert("");
-
-                },
-                clear: function (ev) {
                     validationSuccess.html("");
                 }
             });
@@ -68,22 +74,14 @@
                         type: "group",
                         label: "Rental Sum",
                         items: [
-                            { field: "TotalRentalCost", label: { text: "Total Rental Cost", optional: true } },
-                            { field: "TotalAdditionalCost", label: { text: "Total Additional Cost", optional: true } },
-                            { field: "TotalAmount", label: { text: "Total Amount", optional: true } },
-                            { field: "TotalNoOfVehicles", label: { text: "Total No Of Vehicles", optional: true } }
+                            { field: "TotalRentalCost", label: { text: "Total Rental Cost"} },
+                            { field: "TotalAdditionalCost", label: { text: "Total Additional Cost"} },
+                            { field: "TotalAmount", label: { text: "Total Amount"} },
+                            { field: "TotalNoOfVehicles", label: { text: "Total No Of Vehicles"} }
 
                         ]
                     }],
                 validateField: function (e) {
-                    validationSuccess.html("");
-                },
-                submit: function (e) {
-                    SaveQuotationDetails(e.model);
-                    alert("");
-
-                },
-                clear: function (ev) {
                     validationSuccess.html("");
                 }
             });
@@ -186,7 +184,6 @@
                             },
                             {
                                 field: "Phone",
-                                editor: "NumericTextBox",
                                 label: "Phone",
                                 validation: { required: true }
                             }
@@ -209,23 +206,46 @@
                     validationSuccess.html("");
                 }
             });
+            $('#costingForm button[type="submit"], #costingForm button[type="button"]').hide();
+            $('#rentalSumForm button[type="submit"], #rentalSumForm button[type="button"]').hide();
+            $("#createCostComponent").click(function () {
+                var url = '@Url.Action("AddEdit", "CostDetails")';
+
+                // Redirect to the URL
+                window.location.href = url;
+            }
+            );
         });
         function SaveQuotationDetails(e) {
+            // Serialize all three forms
+            var formDataArray = $("form").serializeArray();
+            // Submit the form data to the server using an AJAX request
             $.ajax({
-                type: "POST",
-                data: JSON.stringify(e),
                 url: "/Quotation/CreateQuotation",
-                //dataType: "json",
-                contentType: 'application/json; charset=utf-8',
+                method: "POST",
+                data: formDataArray,
                 success: function (response) {
-                    // Handle the successful response from the server
-                    validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+                    // Handle the server response
                 },
-                error: function (jqXHR, textStatus, errorThrown) {
-                    // Handle the error response from the server
-                    alert("Error saving data: " + errorThrown);
+                error: function (error) {
+                    // Handle the AJAX error
                 }
             });
+            //$.ajax({
+            //    type: "POST",
+            //    data: JSON.stringify(e),
+            //    url: "/Quotation/CreateQuotation",
+            //    //dataType: "json",
+            //    contentType: 'application/json; charset=utf-8',
+            //    success: function (response) {
+            //        // Handle the successful response from the server
+            //        validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+            //    },
+            //    error: function (jqXHR, textStatus, errorThrown) {
+            //        // Handle the error response from the server
+            //        alert("Error saving data: " + errorThrown);
+            //    }
+            //});
         }
 
     </script>
