@@ -1,12 +1,52 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\css\\default-main.css",
+      "PackagePath": "staticwebassets\\css\\default-main.css"
+    },
+    {
+      "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\css\\default-purple.css",
+      "PackagePath": "staticwebassets\\css\\default-purple.css"
+    },
+    {
       "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
       "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\js\\jquery.min.js",
+      "PackagePath": "staticwebassets\\js\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\js\\jquery.min.map",
+      "PackagePath": "staticwebassets\\js\\jquery.min.map"
+    },
+    {
+      "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\js\\kendo.all.min.js",
+      "PackagePath": "staticwebassets\\js\\kendo.all.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\js\\kendo.all.min.js.map",
+      "PackagePath": "staticwebassets\\js\\kendo.all.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\js\\kendo.core.min.js",
+      "PackagePath": "staticwebassets\\js\\kendo.core.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\js\\kendo.core.min.js.map",
+      "PackagePath": "staticwebassets\\js\\kendo.core.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\js\\kendo.form.min.js",
+      "PackagePath": "staticwebassets\\js\\kendo.form.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\js\\kendo.form.min.js.map",
+      "PackagePath": "staticwebassets\\js\\kendo.form.min.js.map"
     },
     {
       "Id": "C:\\Users\\Naama\\RentalQuotationModule\\RentalQuotationModule\\wwwroot\\js\\site.js",

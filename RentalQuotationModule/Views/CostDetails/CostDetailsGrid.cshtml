@@ -1,0 +1,83 @@
+﻿
+<div id="gridexample">
+    <div id="grid"></div>
+    @*<table id="myTable" class="display">
+        <thead>
+            <tr>
+                <th>Make</th>
+                <th>Model</th>
+                <th>Group</th>
+                <th>Checkout Location</th>
+                <th>Checkin Location</th>
+                <th>No. of Vehicles</th>
+                <th>Rental Sum</th>
+                <th>Remarks</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>*@
+    <script>
+        $(document).ready(function () {
+            //$.ajax({
+            //    url: '/CostDetails/GetCostDetails',
+            //    type: 'GET',
+            //    dataType: 'json',
+            //    success: function (data) {
+            //        console.log("Table data");
+            //        console.log(data);
+            //        // Bind the data to the table using DataTables plugin
+            //        $('#myTable').DataTable({
+            //            data: data,
+            //            columns: [
+            //                { data: 'make' },
+            //                { data: 'model' },
+            //                { data: 'group' },
+            //                { data: 'checkoutLocation' },
+            //                { data: 'checkinLocation' },
+            //                { data: 'noOfVehicle' },
+            //                { data: 'rentalSum' },
+            //                { data: 'remarks' }
+            //            ]
+            //        });
+            //    },
+            //    error: function (xhr) {
+            //        console.log(xhr.responseText);
+            //    }
+            //});
+            // Create a new Kendo UI grid
+            $("#grid").kendoGrid({
+                dataSource: {
+                    transport: {
+                        read: {
+                            url: "/CostDetails/Get",
+                            dataType: "json",
+                            type: "GET"
+                        }
+                    },
+                    schema: {
+                        data: "data",
+                        total: "total"
+                    },
+                    pageSize: 10,
+                    serverPaging: true,
+                    serverSorting: true
+                },
+                height: 250,
+                sortable: true,
+                pageable: true,
+                columns: [
+                {field: "id", title: "ID"},
+                { field: "make", title: "Make" },
+                { field: "model", title: "Model" },
+                { field: "group", title: "Group" },
+                { field: "checkinLocation", title: "Checkin Location" },
+                { field: "checkoutLocation", title: "Checkout Location" },
+                { field: "noOfVehicle", title: "No of Vehicle" },
+                { field: "rentalSum", title: "Rental Sum" },
+                { field: "remarks", title: "Remarks" }
+                ]
+            });
+
+        });
+    </script>
+</div>

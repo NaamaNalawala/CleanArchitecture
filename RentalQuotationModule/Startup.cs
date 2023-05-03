@@ -39,7 +39,10 @@ namespace RentalQuotationModule
             services.AddScoped(typeof(IAsyncRepository<>), typeof(EfRepository<>));
             services.AddScoped<ITodoRepository, ToDoRepository>();
             services.AddScoped<ITodoService, TodoService>();
-            
+            services.AddScoped<ICostDetailService, CostDetailService>();
+            services.AddScoped<ICostComponentService, CostComponentService>();
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IQuotationService, QuotationService>();
             services.AddScoped<IUserService, UserService>();
 
             

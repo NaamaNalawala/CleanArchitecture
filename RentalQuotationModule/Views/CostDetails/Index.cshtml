@@ -1,5 +1,164 @@
-﻿@*
+﻿
+@*
     For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 *@
+<div>
+    @*@Html.Partial("CostComponent.cshtml")*@
+</div>
+
+<div id="example">
+    <div class="demo-section">
+        <div id="validation-success"></div>
+        <h4>Cost Details</h4>
+        <form id="exampleform"></form>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            var validationSuccess = $("#validation-success");
+
+            $("#exampleform").kendoForm({
+                orientation: "horizontal",
+                formData: {
+                    //DropDownList: "Nissan",
+                },
+                layout: "grid",
+                grid: {
+                    cols: 3,
+                    gutter: 20
+                },
+                items: [
+                    {
+                    type: "group",
+                    items: [
+                        {
+                                field: "Make", editor: "DropDownList", label: "Make", validation: { required: true }, editorOptions: {
+                                optionLabel: "Select item...",
+                                dataSource: [
+                                    "Nissan",  
+                                    "Mitshubhi"
+                                ],
+                            }
+                        },
+                        {
+                                field: "CheckoutLocation", editor: "DropDownList", label: "Check Out Location", validation: { required: true }, editorOptions: {
+                                optionLabel: "Select item...",
+                                dataSource: [
+                                   "Terminal 1",
+                                   "Terminal 2"
+                                ],
+                                
+                                
+                            }
+                        },
+                        {
+                            field: "RentalSum",
+                            editor: "NumericTextBox",
+                            label: "Rental Sum:",
+                            validation: { required: true }
+                        },
+
+                        ]
+                    
+                    }
+                    ,{
+                        type: "group",
+                        items: [
+                            {
+                                field: "Model", editor: "DropDownList", label: "Model", validation: { required: true }, editorOptions: {
+                                    optionLabel: "Select item...",
+                                    dataSource: [
+                                        "Sunny" ,
+                                        "Lancer"
+                                    ],
+                                    
+                                    
+                                }
+                            },
+                            {
+                                field: "CheckinLocation", editor: "DropDownList", label: "Check In Location", validation: { required: true }, editorOptions: {
+                                    optionLabel: "Select item...",
+                                    dataSource: [
+                                        "Terminal 1",
+                                        "Terminal 2"
+                                    ],
+                                    
+                                    
+                                }
+                            },
+                            {
+                                field: "Remarks",
+                                editor: "TextArea",
+                                label: "Remarks"
+                            }
+                        ]
+                        
+                    }, {
+                        type: "group",
+                        items: [
+                            {
+                                field: "Group", editor: "DropDownList", label: "Group", validation: { required: true }, editorOptions: {
+                                    optionLabel: "Select item...",
+                                    dataSource: [
+                                        "A",
+                                        "B"
+                                    ],
+                                    
+                                    
+                                }
+                            },
+                            {
+                                field: "NoOfVehicle",
+                                editor: "NumericTextBox",
+                                label: "No Of Vehicle:",
+                                validation: { required: true }
+                            }
+                        ]
+
+                    }
+                    ],
+                validateField: function (e) {
+                    validationSuccess.html("");
+                },
+                submit: function (e) {
+                    e.preventDefault();
+                    console.log(e);
+                   // $("#exampleform").submit();
+                    SaveCostDetails(e.model);
+                    alert("");
+                    
+                },
+                clear: function (ev) {
+                    validationSuccess.html("");
+                }
+            });
+        });
+        function SaveCostDetails(e) {
+            console.log("At save func:");
+            console.log(e);
+            $.ajax({
+                type: "POST",
+                data: JSON.stringify(e),
+                url: "/CostDetails/Create",
+                //dataType: "json",
+                contentType: 'application/json; charset=utf-8',
+                success: function (response) {
+                    // Handle the successful response from the server
+                    validationSuccess.html("<div class='k-messagebox k-messagebox-success'>Form data is valid!</div>");
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    // Handle the error response from the server
+                    alert("Error saving data: " + errorThrown);
+                }
+            });
+        }
+
+    </script>
+
+</div>
+<br/>
+<div>
+    @Html.Partial("CostDetailsGrid.cshtml")
+</div>
 @{
 }
